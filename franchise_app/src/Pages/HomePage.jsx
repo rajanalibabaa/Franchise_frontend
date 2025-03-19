@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from '../Compnents/NavBar.js'
+import BannerSec from '../Compnents/BannerSec.js'
 
 function HomePage() {
   return (
 <>
 <Navbar/>
-<h1>Hello</h1>
-</>
+<BannerSec/>
+  </>
  )
 }
 
