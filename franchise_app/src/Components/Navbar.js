@@ -1,53 +1,52 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft ,User, ChevronDown} from "lucide-react";
-import "../Style/Navbar.css"; // Import Navbar styles
+import { User } from "lucide-react"; // Lucide icon for profile
+import "../Style/Navbar.css";
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Simulated login state
+const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <nav className="navbar">
-      <div className="nav-container">
-        <Link to="/" className="logo">MR FRANCHISE</Link>
-        <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-         <ArrowLeft size={24} className="navbar-icon" />
-        </div>
-        <ul className={isOpen ? "nav-links open" : "nav-links"}>
-          {/* <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li> */}
-          <li><Link to="/category" onClick={() => setIsOpen(false)}>Category</Link></li>
-          <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
-          <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
-          <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>
-        </ul>
-        <div className="profile-dropdown">
-            <div 
-              className="profile-icon" 
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-            >
-              <User size={20} />
-              <ChevronDown size={16} />
-            </div>
+      <div className="logo">MR FRANCHISE</div>
 
-            {dropdownOpen && (
-              <div className="dropdown-menu">
-                {!isLoggedIn ? (
-                  <>
-                    <Link to="/signin">Sign In</Link>
-                    <Link to="/register">Sign Up</Link>
-                  </>
-                ) : (
-                  <button onClick={() => setIsLoggedIn(false)}>Sign Out</button>
-                )}
-              </div>
-            )}
-          </div>
+      <div className="nav-right">
+        <div className="nav-links">
+          <a href="#category">Category</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
+
+        <div className="profile" onClick={toggleMenu}>
+          {isLoggedIn ? (
+            <User className="profile-icon" />
+          ) : (
+            <span className="login-text">👤User</span>
+          )}
+
+          {menuOpen && (
+            <div className="profile-menu">
+              {!isLoggedIn ? (
+                <>
+                  <button onClick={() => alert("Create Account Clicked")}>
+                    Create an Account
+                  </button>
+                  <button onClick={() => setIsLoggedIn(true)}>Log In</button>
+                </>
+              ) : (
+                <button onClick={() => setIsLoggedIn(false)}>Sign Out</button>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

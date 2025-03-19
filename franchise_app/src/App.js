@@ -1,38 +1,23 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { Routes, Route} from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Services from "./Pages/Services";
-import Category from "./Pages/Category";
-import Contact from "./Pages/Contact";
+import React, { useState, useEffect } from "react"; 
+import Navbar from "./Components/Navbar";  
 import Popup from "./Components/Popup";
 
 function App() {
-  const [showPopup, setShowPopup] = useState(false);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, );
+  const [showPopup, setShowPopup] = useState(false); 
 
-    return () => clearTimeout(timer); // Cleanup on unmount
-  }, []);
+  // Show popup automatically when the page loads
+  useEffect(() => {
+    setShowPopup(true);  
+  }, []);  // Empty dependency array ensures it runs only once on mount
 
   return (
-    <>
+    <div>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/category" element={<Category />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <h1>Welcome to Our Website</h1>
+      <h1>Welcome to My Website</h1>
+
+      {/* Show Popup automatically on page load & when button is clicked */}
       {showPopup && <Popup onClose={() => setShowPopup(false)} />}
-    </>
-    
+    </div>
   );
 }
 
