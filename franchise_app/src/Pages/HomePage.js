@@ -1,12 +1,11 @@
 import React from 'react'
-import Navbar from '../Compnents/NavBar.jsx'
-import BannerSec from '../Compnents/BannerSec.jsx'
-import Sidebar from '../Compnents/SideBar.jsx'
+import BannerSec from '../Components/BannerSec.jsx'
+import Navbar from '../Components/NavBar.jsx'
+// import Sidebar from '../Components/SideBar.jsx'
 
 function HomePage() {
   return (
 <>
-<Sidebar/>
 <Navbar/>
 <BannerSec/>
   </>

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { User } from "lucide-react"; // Lucide icon for profile
+import { User,AlignJustify } from "lucide-react"; 
 import "../Assets/Style/NavBar.css";
+
 import img1 from "../Assets/Images/ModelBg.jpeg";
 
-const Navbar = ({ onClose }) => {
+
+function Navbar ({ onClose })  {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(true); // Manage popup visibility  rm -f .git/index.lock
-
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -33,6 +34,9 @@ const Navbar = ({ onClose }) => {
       )}
       
       <nav className="navbar">
+      <div className="sidebar">
+        <label><AlignJustify/></label>
+  </div>
         <div className="logo">MR FRANCHISE</div>
 
         <div className="nav-right">

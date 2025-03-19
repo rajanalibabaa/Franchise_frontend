@@ -1,9 +1,20 @@
 import React, { useState } from 'react'
 import {Search} from "lucide-react";
+import {useNavigate} from "react-router-dom"
 import "../Assets/Style/HomePage.css"
 
 function BannerSec() {
     const [showDropdown, setShowDropdown] = useState(false);
+    const [industry, setIndustry] = useState("");
+    const [sector, setSector] = useState("");
+    const [service, setService] = useState("");
+    const navigate = useNavigate();
+    const handleFranchiseClick = () =>{
+      setShowDropdown((prev)=> !prev);
+    };
+
+    // const handleNavigate
+  
 
   return (
 <div className="banner-container">
