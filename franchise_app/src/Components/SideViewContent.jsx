@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {Search,ChevronUp,ChevronDown,Facebook,Twitter,Instagram, X} from "lucide-react"
-import "../Assets/Style/sidebar.css"
-
+import "../Assets/Style/SidebarView.css";
 const categories = [
     { name: "Automotive", subcategories: ["Car Repair", "Car Rental", "Spare Parts"] },
     { name: "Beauty & Health", subcategories: ["Salon", "Spa", "Wellness"] },
