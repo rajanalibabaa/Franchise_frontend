@@ -4,7 +4,7 @@
     left: -290px;
     width: 250px;
     height: 100%;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #e74c3c 0%, #e74c3c 100%);
     color: white;
     transition: left 0.3s ease;
     padding: 20px;
@@ -20,14 +20,16 @@
   .close-btn {
     background: none;
     border: none;
-    color: #ddd;
+    color: #fbf8ff;
     font-size: 24px;
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 10px;
   }
-  
+  .close-btn:hover{
+    background-color:#fff; 
+  }
   .search-bar {
     display: flex;
     margin-bottom: 20px;
@@ -86,9 +88,12 @@
   }
   
   .sidebar-footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #e74c3c;
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: space-evenly;
+    gap: 30px;  
   }
   
   .sidebar-footer button {
@@ -96,8 +101,33 @@
     border: none;
     color: white;
     cursor: pointer;
+    
   }
   
   .sidebar-footer button:hover {
     color: #ffcc00;
   }
+  .sidebar-footer i{
+    font-size: 20px;
+    margin: 0 10px;
+    color: white;
+  }
+  .content-section {
+    margin-top: 15px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.content-section h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px; 
+  padding: 10px;
+}
+

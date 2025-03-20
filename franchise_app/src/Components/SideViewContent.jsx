@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Search,ChevronUp,ChevronDown,Facebook,Twitter,Instagram, X} from "lucide-react"
+import {Search,ChevronUp,ChevronDown,Facebook,Twitter,Instagram,Linkedin, X} from "lucide-react"
 import "../Assets/Style/SidebarView.css";
 const categories = [
     { name: "Automotive", subcategories: ["Car Repair", "Car Rental", "Spare Parts"] },
@@ -24,6 +24,14 @@ function Sidebar({ isOpen, toggleSidebar }) {
             <Search size={24} />
           </button>
         </div>
+        
+        <div class="content-section">
+        <h3>Franchise</h3>
+        <h3>Dealer & Distributor</h3>
+        <h3>Education</h3>
+       </div>
+
+   
         <p>Franchise Categories</p>
           <ul>
             {categories.map((category) => (
@@ -46,7 +54,15 @@ function Sidebar({ isOpen, toggleSidebar }) {
           <button><Facebook size={24} /></button>
           <button><Twitter size={24} /></button>
           <button><Instagram size={24} /></button>
+          <button><Linkedin size={24}/></button>
         </div>
+
+        <div class="footer-links">
+           <a href="#">Link 1</a>
+           <a href="#">Link 2</a>
+           <a href="#">Link 3</a>
+           <a href="#">Link 4</a>
+</div>
       </div>
   );
 }
