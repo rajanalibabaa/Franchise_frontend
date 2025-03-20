@@ -1,0 +1,81 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f1c40f;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.profile-icon {
+  margin-right: 5px;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  width: 150px;
+  z-index: 1000;
+}
+
+.profile-menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.profile-menu button:hover {
+  background-color: #f1f1f1;
+}
