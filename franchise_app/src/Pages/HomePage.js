@@ -1,16 +1,30 @@
-import React from 'react'
-import Navbar from '../Compnents/NavBar.jsx'
-import BannerSec from '../Compnents/BannerSec.jsx'
-import Sidebar from '../Compnents/SideBar.jsx'
+import React, { useState, useEffect } from 'react';
+import BannerSec from '../Components/BannerSec.jsx';
+import Navbar from '../Components/NavBar.jsx';
+import PopupModal from '../Components/PopupModal.jsx';
 
 function HomePage() {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  useEffect(() => {
+    const popupShown = sessionStorage.getItem('popupShown');
+    if (!popupShown) {
+      setIsPopupVisible(true);
+      sessionStorage.setItem('popupShown', 'true');
+    }
+  }, []);
+
+  const closePopup = () => {
+    setIsPopupVisible(false);
+  };
+
   return (
-<>
-<Sidebar/>
-<Navbar/>
-<BannerSec/>
-  </>
- )
+    <>
+      {isPopupVisible && <PopupModal onClose={closePopup} />}
+      <Navbar />
+      <BannerSec />
+    </>
+  );
 }
 
-export default HomePage
+export default HomePage;

@@ -1,11 +1,17 @@
 import React from 'react';
-// import {Router,Route,Routes} from "react-router-dom"
+import {Route,Routes} from "react-router-dom"
 import HomePage from './Pages/HomePage';
+import Dealerpage from './Pages/DealerPage';
+import ChannelPartner from './Pages/ChannelPartner';
 
 function App() {
   return (
     <>
-<HomePage/>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/dealer' element={<Dealerpage/>}/>
+        <Route path='/partner' element={<ChannelPartner/>}/>
+      </Routes>
     </>
 
   )
