@@ -4,21 +4,31 @@ import {useNavigate} from "react-router-dom"
 import "../Assets/Style/HomePage.css"
 
 function BannerSec() {
-    const [showDropdown, setShowDropdown] = useState(false);
-    const [industry, setIndustry] = useState("");
-    const [sector, setSector] = useState("");
-    const [service, setService] = useState("");
-    const navigate = useNavigate();
-    const handleFranchiseClick = () =>{
-      setShowDropdown((prev)=> !prev);
-    };
+  const [showDropdowns, setShowDropdowns] = useState(false);
+  const [industry, setIndustry] = useState("");
+  const [sector, setSector] = useState("");
+  const [service, setService] = useState("");
 
-    // const handleNavigate
-  
+  const navigate = useNavigate();
+
+  const handleFranchiseClick = () => {
+    setShowDropdowns((prev) => !prev); // Toggle dropdowns
+  };
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
+  const handleSearch = () => {
+    if (industry && sector && service) {
+      navigate(`/results?industry=${industry}&sector=${sector}&service=${service}`);
+    } else {
+      alert("Please select all fields before searching.");
+    }
+  };
 
   return (
-<div className="banner-container">
-      {/* Background Image */}
+    <div className="banner-container">
       <div className="banner">
         <div className="overlay">
           <h1>
@@ -26,47 +36,47 @@ function BannerSec() {
           </h1>
           <p>World's highest visited franchise website network</p>
 
-          {/* Toggle Buttons */}
           <div className="button-group">
-            <button className="toggle-btn" onClick={() => setShowDropdown(!showDropdown)}>
+            <button className="toggle-btn" onClick={handleFranchiseClick}>
               Franchise
             </button>
-            <button className="toggle-btn" onClick={() => setShowDropdown(!showDropdown)}>
+            <button className="toggle-btn" onClick={() => handleNavigate("/dealer")}>
               Dealer Distributer
             </button>
-            <button className="toggle-btn" onClick={() => setShowDropdown(!showDropdown)}>
+            <button className="toggle-btn" onClick={() => handleNavigate("/partner")}>
               Channel Partner
             </button>
           </div>
 
-          {/* Dropdowns and Search Button - Show When Clicked */}
-          {showDropdown && (
+          {showDropdowns && (
             <div className="dropdown-section">
-              <select>
-                <option>Select Industry</option>
-                <option>Technology</option>
-                <option>Finance</option>
-              </select>
-              <select>
-                <option>Select Sector</option>
-                <option>Health</option>
-                <option>Education</option>
-              </select>
-              <select>
-                <option>Service</option>
-                <option>Consulting</option>
-                <option>Software</option>
+              <select value={industry} onChange={(e) => setIndustry(e.target.value)}>
+                <option value="">Select Industry</option>
+                <option value="Technology">Technology</option>
+                <option value="Finance">Finance</option>
               </select>
 
-              {/* Search Button */}
-              <button className="search-btn">
+              <select value={sector} onChange={(e) => setSector(e.target.value)}>
+                <option value="">Select Sector</option>
+                <option value="Health">Health</option>
+                <option value="Education">Education</option>
+              </select>
+
+              <select value={service} onChange={(e) => setService(e.target.value)}>
+                <option value="">Select Service/Product</option>
+                <option value="Consulting">Consulting</option>
+                <option value="Software">Software</option>
+              </select>
+
+              <button className="search-btn" onClick={handleSearch}>
                 <Search size={20} color="white" />
               </button>
             </div>
           )}
         </div>
       </div>
-    </div>  )
-}
+    </div>
+  );
+};
 
 export default BannerSec
