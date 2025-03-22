@@ -3,6 +3,8 @@ import BannerSec from '../Components/BannerSec.jsx';
 import Navbar from '../Components/NavBar.jsx';
 import PopupModal from '../Components/PopupModal.jsx';
 import Footer from '../Components/Footer.jsx';
+import GridViewBrand from '../Components/GridViewBrand.jsx';
+import RegisterUser from './RegisterUser.js';
 
 function HomePage() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -17,13 +19,15 @@ function HomePage() {
 
   const closePopup = () => {
     setIsPopupVisible(false);
-  };
+  }
 
   return (
     <>
       {isPopupVisible && <PopupModal onClose={closePopup} />}
       <Navbar />
       <BannerSec />
+      <GridViewBrand/>
+      <RegisterUser/>
       <Footer/>
     </>
   );
