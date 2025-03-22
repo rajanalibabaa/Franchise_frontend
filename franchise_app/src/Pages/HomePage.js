@@ -4,8 +4,12 @@ import Navbar from '../Components/NavBar.jsx';
 import PopupModal from '../Components/PopupModal.jsx';
 import Footer from '../Components/Footer.jsx';
 import GridViewBrand from '../Components/GridViewBrand.jsx';
+<<<<<<< HEAD
 import LoginPage from './LoginPage.js';
 
+=======
+import RegisterUser from './RegisterUser.js';
+>>>>>>> 069027c4aa712f21c3663439e3000596c306aadc
 
 function HomePage() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -20,7 +24,7 @@ function HomePage() {
 
   const closePopup = () => {
     setIsPopupVisible(false);
-  };
+  }
 
   return (
     <>
@@ -28,7 +32,11 @@ function HomePage() {
       <Navbar />
       <BannerSec />
       <GridViewBrand/>
+<<<<<<< HEAD
       <LoginPage/>
+=======
+      <RegisterUser/>
+>>>>>>> 069027c4aa712f21c3663439e3000596c306aadc
       <Footer/>
     </>
   );

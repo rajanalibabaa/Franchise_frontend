@@ -34,7 +34,7 @@ function GridViewBrand() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowGrid(true);
-        }, 5000);
+        }, 2000);
         return () => clearTimeout(timer);
     }, []);
 

@@ -8,14 +8,25 @@ function Footer() {
       <div className="footer-container">
       <div className="footer-section">
         <div className='footer-logo' >
+        <a href="/">
          <img src={logo} alt="Company Logo"/>
+         </a>
          <p className="footer-description">
             Your trusted franchise business expert, helping you grow and expand efficiently.
             <div class="social-icons">
-            <Twitter/>
-            <Facebook/>
-            <Linkedin/>
-            <Instagram/>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <Twitter size={30} />
+      </a>
+            
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <Facebook size={30} />
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <Linkedin size={30} />
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <Instagram size={30} />
+      </a>
         </div>
           </p>
           
