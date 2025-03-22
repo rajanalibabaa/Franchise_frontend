@@ -4,6 +4,8 @@ import Navbar from '../Components/NavBar.jsx';
 import PopupModal from '../Components/PopupModal.jsx';
 import Footer from '../Components/Footer.jsx';
 import GridViewBrand from '../Components/GridViewBrand.jsx';
+import LoginPage from './LoginPage.js';
+
 
 function HomePage() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -26,6 +28,7 @@ function HomePage() {
       <Navbar />
       <BannerSec />
       <GridViewBrand/>
+      <LoginPage/>
       <Footer/>
     </>
   );

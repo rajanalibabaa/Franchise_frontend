@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { User, AlignJustify } from "lucide-react";
 import Sidebar from "./SideViewContent";
 import "../Assets/Style/NavBar.css";
@@ -7,6 +8,10 @@ function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [sidebarView, setSidebarView] = useState(false);
+
+  
+    const navigate = useNavigate();
+  
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -44,7 +49,7 @@ function Navbar() {
                   <button onClick={() => alert("Create Account Clicked")}>
                     Create an Account
                   </button>
-                  <button onClick={() => setIsLoggedIn(true)}>Log In</button>
+                  <button onClick={() => navigate("/loginpage")}>Log In</button>
                 </>
               ) : (
                 <button onClick={() => setIsLoggedIn(false)}>Sign Out</button>
