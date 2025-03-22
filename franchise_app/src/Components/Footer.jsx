@@ -1,10 +1,26 @@
-import React from 'react'
+import React from 'react';
 import "../Assets/Style/footer.css";
-
+import logo from '../Assets/Images/Mrlogo.jpg';
+import {Facebook, Instagram, Linkedin,Twitter} from 'lucide-react'
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
+      <div className="footer-section">
+        <div className='footer-logo' >
+         <img src={logo} alt="Company Logo"/>
+         <p className="footer-description">
+            Your trusted franchise business expert, helping you grow and expand efficiently.
+            <div class="social-icons">
+            <Twitter/>
+            <Facebook/>
+            <Linkedin/>
+            <Instagram/>
+        </div>
+          </p>
+          
+          </div>
+        </div>
       
       <div className="footer-section">
           <h3>Beauty & Health</h3>
@@ -33,7 +49,7 @@ function Footer() {
 
       {/* Bottom Copyright */}
       <div className="footer-bottom">
-        <p>© 2025 MyWebsite. All rights reserved.</p>
+        <p>© 2025 MyWebsite. All rights reserved by Mr.Franchise</p>
       </div>
     </footer>
 
